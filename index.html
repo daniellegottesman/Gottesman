@@ -2,26 +2,30 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>My Photo Page</title>
+<title>Photos</title>
 <style>
-  body {
-    margin: 0;
+  body { margin:0; background:#000; }
+  .wrap {
     padding: 20px;
-    background: #000;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* centers images of any width */
+    gap: 20px;
   }
   img {
-    max-width: 95%;   /* shrink to fit smaller screens */
-    height: auto;     /* keep natural proportions */
-    margin: 20px 0;
+    display: block;
+    width: auto;        /* natural width */
+    height: auto;       /* natural proportions */
+    max-width: 95vw;    /* prevent overflow on small screens */
     border: 4px solid #fff;
+    image-orientation: from-image; /* respect phone rotation */
   }
 </style>
 <body>
-  <img src="1f4949b4-ff94-4e02-826a-002464410ed0.jpeg" alt="First photo">
-  <img src="IMG_7741.jpeg" alt="Second photo">
-  <img src="img-20160826-wa0003.jpeg" alt="Third photo">
+  <div class="wrap">
+    <img src="1f4949b4-ff94-4e02-826a-002464410ed0.jpeg" alt="">
+    <img src="IMG_7741.jpeg" alt="">
+    <img src="img-20160826-wa0003.jpeg" alt="">
+  </div>
 </body>
 </html>
